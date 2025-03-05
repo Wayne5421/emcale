@@ -1,0 +1,34 @@
+<div id="services" class="main-container">
+  <div class="content">
+    <div class="title-text">
+      <h3 data-aos="fade-up">Conheça nossos serviços</h3>
+      <p data-aos="fade-up" data-aos-duration="1000">Conheça um poucos dos serviços prestados pela Emcale</p>
+    </div>
+
+    <div class="card-services">
+      <div class="card" *ngFor="let service of services; let i = index">
+        <a data-aos="zoom-in" [attr.data-aos-delay]="i * 200" class="card1" href="#">
+          <p>{{ service }}</p>
+          <div class="go-corner" href="#">
+            <div class="go-arrow">→</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact">
+      <button (click)="redirectToWhatsApp()" class="animated-button" data-aos="fade-up"
+        data-aos-duration="800">
+        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+        </svg>
+        <span class="text">Entrar em contato</span>
+        <span class="circle"></span>
+        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</div>

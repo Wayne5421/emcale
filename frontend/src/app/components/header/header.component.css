@@ -1,0 +1,128 @@
+.main-container {
+    background-color: transparent;
+    min-height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    justify-content: space-between; 
+    padding: 10px 20px; 
+}
+
+
+.theme-toggle {
+    margin-left: 20px;
+    font-weight: bold;
+    display: flex; 
+}
+
+.mat-slide-toggle {
+    color: black;
+}
+
+.dark-theme .mat-slide-toggle {
+    color: yellow;
+}
+
+.theme-toggle .mat-slide-toggle-bar {
+    background-color: transparent;
+}
+
+.mat-slide-toggle .mat-slide-toggle-thumb {
+    background-color: black;
+}
+
+.mat-icon {
+    font-size: 20px;
+    color: black;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    flex-grow: 1;
+}
+
+.logo {
+    max-height: 50px;
+    width: auto;
+    margin-left: 30%; 
+}
+
+.navigator {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.routes {
+    display: flex;
+    align-items: center;
+    margin-right: 10%;
+    
+}
+
+.routes a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    font-weight: 600;
+    transition: color 0.5s;
+    border-bottom: 1px solid rgb(255, 28, 28);
+    transition: 0.5s;
+    border-radius: 5px;
+    background-color: red;
+    border-radius: 0px 20px 0 10px;
+}
+
+.routes a:hover {
+    background-color: red;
+    color: white;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    transform: scale(1.1) translateY(-3px);
+  }
+
+
+
+@media (max-width: 850px) {
+    .navigator {
+        display: none;
+    }
+    .theme-toggle {
+        margin-left: 20px;
+    }
+    .logo-container {
+        justify-content: center; 
+    }
+    .main-container {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .theme-toggle {
+        margin-left: 10px; 
+        display: flex;
+    }
+    .logo-container {
+        flex-grow: 0;
+    }
+    .main-container {
+        padding: 5px 10px;
+        justify-content: space-between; 
+    }
+    .routes {
+        display: none; 
+    }
+}
+
