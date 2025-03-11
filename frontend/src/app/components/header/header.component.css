@@ -82,14 +82,14 @@
     transition: 0.5s;
     border-radius: 5px;
     background-color: red;
-    border-radius: 0px 20px 0 10px;
+
 }
 
 .routes a:hover {
     background-color: red;
     color: white;
-    border-bottom: 2px solid rgb(0, 0, 0);
     transform: scale(1.1) translateY(-3px);
+    border-radius: 10px 20px 10px 20px;
   }
 
 

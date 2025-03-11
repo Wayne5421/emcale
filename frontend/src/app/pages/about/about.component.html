@@ -22,20 +22,16 @@
 
     <div class="adress">
         <div class="card-services">
-          <p>Contatos:</p>
             <div class="card" *ngFor="let service of adress; let i = index">
               <a data-aos="zoom-in" [attr.data-aos-delay]="i * 200" class="card1" href="#">
                 <p>{{ service }}</p>
-                <div class="go-corner" href="#">
-                  <div class="go-arrow">→</div>
-                </div>
+
               </a>
 
               
 
 
             </div>
-            <app-animated-button></app-animated-button>
           </div>
     </div>
 
