@@ -6,7 +6,7 @@
     </div>
 
     <div class="card-services">
-      <div class="card" *ngFor="let service of services; let i = index">
+      <div (click)="redirectToWhatsAppFromCard(service)" class="card" *ngFor="let service of services; let i = index">
         <a data-aos="zoom-in" [attr.data-aos-delay]="i * 200" class="card1" href="#">
           <p>{{ service }}</p>
           <div class="go-corner" href="#">

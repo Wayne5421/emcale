@@ -1,4 +1,4 @@
-import { Component, computed, Signal, signal } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -6,24 +6,33 @@ import { Component, computed, Signal, signal } from '@angular/core';
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
-export class AboutComponent {
-  count: Signal<number>;
-  private countValue = signal(0);
+export class AboutComponent implements OnInit, AfterViewInit {
+  count: number = 0;
   finalValue = new Date().getFullYear() - 2012; 
-  duration = 2000; 
-
+  duration = 2000;
   adress: string[] = [
     "emcale@emcale.com.br",
     "(19) 3873-1857",
-
   ];
 
-  constructor() {
-    this.count = computed(() => this.countValue());
-  }
+  constructor() {}
 
-  ngOnInit() {
-    this.animateCount();
+  ngOnInit() {}
+
+  ngAfterViewInit() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.animateCount();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.5 }); 
+
+    const countElement = document.querySelector('.history span');
+    if (countElement) {
+      observer.observe(countElement);
+    }
   }
 
   animateCount() {
@@ -33,10 +42,10 @@ export class AboutComponent {
     const interval = setInterval(() => {
       start += increment;
       if (start >= this.finalValue) {
-        this.countValue.set(this.finalValue);
+        this.count = this.finalValue;
         clearInterval(interval);
       } else {
-        this.countValue.set(Math.floor(start));
+        this.count = Math.floor(start);
       }
     }, 30);
   }

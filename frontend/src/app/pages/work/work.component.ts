@@ -29,11 +29,17 @@ export class WorkComponent {
 
     document.documentElement.style.setProperty('--button-text-color', 'red');
   }
-
   redirectToWhatsApp() {
     const phoneNumber = this.variaveis.myNumber;
-
     const message = `Olá! Gostaria de saber mais sobre os seus serviços!`;
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+
+  // Função chamada ao clicar em um card, passando o serviço como argumento
+  redirectToWhatsAppFromCard(service: string) {
+    const phoneNumber = this.variaveis.myNumber;
+    const message = `Olá! Gostaria de saber mais sobre o serviço: ${service}`;
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   }
