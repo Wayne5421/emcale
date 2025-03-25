@@ -11,8 +11,8 @@ export class AboutComponent implements OnInit, AfterViewInit {
   finalValue = new Date().getFullYear() - 2012; 
   duration = 2000;
   adress: string[] = [
-    "emcale@emcale.com.br",
     "(19) 3873-1857",
+    "emcale@emcale.com.br",
   ];
 
   constructor() {}
